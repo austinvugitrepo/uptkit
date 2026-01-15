@@ -6,5 +6,8 @@ while key != "q":
     os = platform.platform()
     print(os)
     key = input()
-
+    if key == "q":
+        print("exited sucessfully.")
+        exit()
+        
 
