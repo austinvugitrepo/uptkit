@@ -1,4 +1,5 @@
 import platform
+import shutil
 
 key = "e" 
 while key != "q":
@@ -10,7 +11,18 @@ while key != "q":
         exit()
     else:
         system = platform.system()
-        print(system)
+        if system == "Linux":
+            for i in ['apt', 'dnf', 'apk', 'pacman', 'emerge']:
+                if shutil.which(i):
+                    print(i)
+
+        elif system == "OpenBSD":
+            print("this is OpenBSD system")
+        elif system == "Darwin":
+            print("this is macOS system")
+        elif system == "Windows":
+            print("this is Windows system")
+
 
 
 
